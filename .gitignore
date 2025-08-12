@@ -1,0 +1,91 @@
+# ----------------------
+# PYTHON
+# ----------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ----------------------
+# VIRTUAL ENVIRONMENTS
+# ----------------------
+.venv/
+venv/
+ENV/
+env/
+
+# ----------------------
+# IDE / EDITOR
+# ----------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.tmp
+*.temp
+
+# ----------------------
+# LOGS & TEMP
+# ----------------------
+*.log
+logs/
+temp/
+*.bak
+*.backup
+
+# ----------------------
+# OS JUNK
+# ----------------------
+.DS_Store
+Thumbs.db
+
+# ----------------------
+# ENVIRONMENT VARIABLES
+# ----------------------
+.env         # <-- added to protect API keys
+.env.local
+.env.production
+.env.development
+
+# ----------------------
+# VECTORSTORE / MODELS
+# ----------------------
+vectorstore/
+models/
+
+# ----------------------
+# CHROMADB / DB FILES
+# ----------------------
+chroma.sqlite3
+test_chromadb/
+
+# ----------------------
+# DATA VALIDATION
+# ----------------------
+data_quality_report.txt
+data_validation.log
+
+# ----------------------
+# OLD FILES
+# ----------------------
+old_version_files/
