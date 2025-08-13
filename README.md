@@ -112,7 +112,7 @@ python scripts/build_vectorstore.py
 
 ## 🚀 Usage
 
-### Run Backend
+### Run Backend (Terminal:1)
 ```bash
 python backend/main.py --port 8089
 ```
@@ -127,7 +127,7 @@ curl http://localhost:8089/healthz
 curl -X POST "http://localhost:8089/api/chat" -H "Content-Type: application/json" -d '{"message":"Coal outlook for India in the next 5 years","persona":"investor"}'
 ```
 
-### Run Frontend
+### Run Frontend (Terminal:2)
 ```bash
 streamlit run main.py --server.port 8502
 ```
