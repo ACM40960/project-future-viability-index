@@ -232,7 +232,7 @@ with st.sidebar:
     st.divider()
     
     # System information (updated to use /healthz if present)
-    st.markdown("###System Info")
+    st.markdown("System Info")
     health = get_system_info()
     if health and health.get("status") == "ok":
         st.success("✅ Backend Online")
