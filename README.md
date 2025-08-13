@@ -1,3 +1,4 @@
+
 # Future Viability Index (FVI) – RAG-Enhanced Coal Industry Assessment
 
 > **Version:** FVI_V2 – with Retrieval-Augmented Generation (RAG) Agent, OpenAI GPT-4o-mini integration, and updated project structure.
@@ -12,8 +13,9 @@
 5. [Installation & Setup](#installation--setup)
 6. [Usage](#usage)
 7. [Development Notes](#development-notes)
-8. [License](#license)
-9. [Authors](#authors)
+8. [Acknowledgement](#acknowledgement)
+9. [License](#license)
+10. [Authors](#authors)
 
 ---
 
@@ -25,47 +27,50 @@ This tool combines:
 - **Retrieval-Augmented Generation (RAG)** with **OpenAI GPT-4o-mini** to provide contextual, knowledge-backed insights.
 - **Interactive UI** for investors, policymakers, and researchers.
 
+The primary goal is to **evaluate coal industry viability** while supporting strategic decision-making towards a sustainable energy transition.
+
 ---
 
 ## ✨ Features
-- **Modular Scoring** – Individual Python modules for different sustainability dimensions.
-- **RAG Agent** – Retrieves relevant knowledge from `fvi_knowledge.txt` in `vectorstore/` before answering.
-- **ChromaDB & FAISS** – Efficient semantic search over embedded domain knowledge.
-- **Streamlit Frontend** – User-friendly interactive interface.
-- **FastAPI Backend** – High-performance API for chat and data processing.
-- **Extensible Knowledge Base** – Easily update domain-specific content.
+- **Modular Scoring** – Dedicated Python modules for each sustainability dimension.
+- **RAG Agent** – Retrieves relevant knowledge from `fvi_knowledge.txt` in `vectorstore/` before responding.
+- **Semantic Search** – Powered by ChromaDB or FAISS for efficient contextual retrieval.
+- **Streamlit Frontend** – User-friendly interactive dashboard.
+- **FastAPI Backend** – Handles chat queries, scoring, and data processing.
+- **Configurable Knowledge Base** – Easy updates to domain-specific content.
+- **Persona-Based Insights** – Responses tailored for investors, policymakers, and researchers.
 
 ---
 
 ## 🏗 Architecture
 
-```
-[Frontend (Streamlit)] ⇄ [FastAPI Backend] ⇄ [RAG Agent] ⇄ [Vectorstore (FAISS/ChromaDB)]
-                                     ⇓
-                               [Scoring Modules]
-                                     ⇓
-                          [Coal Viability Insights]
+### Mermaid Diagram
+```mermaid
+flowchart TD
+    A[User via Streamlit Frontend] -->|Query & Inputs| B[FastAPI Backend]
+    B -->|Retrieve Context| C[RAG Agent]
+    C -->|Search Embeddings| D[Vectorstore (FAISS/ChromaDB)]
+    D -->|Return Relevant Docs| C
+    C -->|Generate Response| E[OpenAI GPT-4o-mini]
+    E -->|Integrate Scores| F[Scoring Modules]
+    F -->|Final Insight| A
 ```
 
 ---
 
 ## 📂 Directory Structure
-
 ```
 FVI/
-│── assets/                  # Static assets (logo, etc.)
-│── backend/                 # Backend FastAPI app & RAG agent
-│── data/                    # Raw and processed data folders
-│── docs/                    # Documentation and system guides
-│── guides/                  # How-to guides
-│── logs/                    # Log files
-│── old_version_files/       # Deprecated scripts & older versions
-│── scores/                  # Scoring modules for FVI
-│── scripts/                 # Helper scripts (build vectorstore, validation, etc.)
-│── vectorstore/             # Knowledge base and embeddings
+│── backend/                 # FastAPI backend & RAG agent
+│── docs/                    # Documentation and diagrams
+│── frontend/                # Streamlit UI, scoring modules & assets
+│   │── assets/              # Static assets (logo, images)
+│   │── data/                # Raw and processed datasets
+│   │── scores/              # Modular scoring scripts
+│── scripts/                 # Helper scripts (vectorstore building, utilities)
+│── vectorstore/             # Knowledge embeddings & index
 │── .env.template            # Environment variable template
-│── config.yaml              # Configuration file
-│── main.py                  # Streamlit frontend entry point
+│── config.yaml              # Main configuration
 │── requirements.txt         # Python dependencies
 │── README.md                # Project documentation
 ```
@@ -84,7 +89,7 @@ cd FVI
 ```bash
 python -m venv .venv
 source .venv/bin/activate     # Mac/Linux
-.venv\Scripts\activate        # Windows (PowerShell)
+.venv\Scripts\activate      # Windows (PowerShell)
 ```
 
 ### 3️⃣ Install Dependencies
@@ -109,30 +114,36 @@ python scripts/build_vectorstore.py
 
 ### Run Backend
 ```bash
-uvicorn backend.main:app --reload --port 8080
+python backend/main.py --port 8089
 ```
 
 **Health Check**
 ```bash
-curl http://localhost:8080/healthz
+curl http://localhost:8089/healthz
 ```
 
 **Test Chat API**
 ```bash
-curl -X POST "http://localhost:8080/api/chat"   -H "Content-Type: application/json"   -d '{"message":"Coal outlook for India in the next 5 years","persona":"investor"}'
+curl -X POST "http://localhost:8089/api/chat" -H "Content-Type: application/json" -d '{"message":"Coal outlook for India in the next 5 years","persona":"investor"}'
 ```
 
 ### Run Frontend
 ```bash
-streamlit run main.py
+streamlit run main.py --server.port 8502
 ```
 
 ---
 
 ## 🛠 Development Notes
-- Always rebuild vectorstore after updating `fvi_knowledge.txt`.
-- Keep `.venv` and `.env` out of Git (`.gitignore` already configured).
-- Use `FVI_V2` branch for latest RAG-integrated development.
+- Rebuild vectorstore after updating `fvi_knowledge.txt`.
+- Keep `.venv` and `.env` out of Git (`.gitignore` is pre-configured).
+- Use the `FVI_V2` branch for RAG-integrated development.
+
+---
+
+## 🙏 Acknowledgement
+We acknowledge the equal contributions of all team members in the design, development, and delivery of the Future Viability Index system.  
+We extend our gratitude to **Darwin & Goliath Ltd.** for their guidance, domain expertise, and provision of data resources, which were instrumental in the successful completion of this project.
 
 ---
 
@@ -144,13 +155,10 @@ Any reproduction, distribution, or use of the material without prior written per
 ---
 
 ## 👥 Authors
-
 | Name | Student ID | Email |
 |------|------------|-------|
-| Rahul Babu | 24203075 | *email_here* |
-| Ujwal Mojidra | 24214941 | *email_here* |
-| Anshu Kumar | 24203717 | *email_here* |
-| Rudra Nirmal Rawat | 24205441 | *email_here* |
-| Sharvari Khatavkar | 24203968 | *email_here* |
-
----
+| Rahul Babu | 24203075 | rahul.babu@ucdconnect.ie |
+| Ujwal Mojidra | 24214941 | ujwal.mojidra@ucdconnect.ie |
+| Anshu Kumar | 24203717 | anshu.kumar@ucdconnect.ie |
+| Rudra Nirmal Rawat | 24205441 | rudra.rawat@ucdconnect.ie |
+| Sharvari Khatavkar | 24203968 | sharvari.khatavkar@ucdconnect.ie |
