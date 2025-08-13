@@ -129,6 +129,7 @@ curl -X POST "http://localhost:8089/api/chat" -H "Content-Type: application/json
 
 ### Run Frontend (Terminal:2)
 ```bash
+cd frontend
 streamlit run main.py --server.port 8502
 ```
 
