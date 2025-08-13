@@ -49,7 +49,7 @@ The primary goal is to **evaluate coal industry viability** while supporting str
 flowchart TD
     A[User via Streamlit Frontend] -->|Query & Inputs| B[FastAPI Backend]
     B -->|Retrieve Context| C[RAG Agent]
-    C -->|Search Embeddings| D[Vectorstore (FAISS/ChromaDB)]
+    C -->|Search Embeddings| D[Vectorstore (FAISS)]
     D -->|Return Relevant Docs| C
     C -->|Generate Response| E[OpenAI GPT-4o-mini]
     E -->|Integrate Scores| F[Scoring Modules]
