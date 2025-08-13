@@ -1,0 +1,140 @@
+# FVI System Configuration
+
+
+# SYSTEM PATHS
+data_dir: "data"
+guides_dir: "guides"
+vectorstore_dir: "vectorstore"
+models_dir: "models"
+logs_dir: "logs"
+assets_dir: "assets"
+
+# LLM CONFIGURATION
+llm:
+  type: "openai"                   
+  model_name: "gpt-4o-mini"    
+  temperature: 0.4                  
+  max_tokens: 1000                 
+  timeout: 30                         
+  
+  # Local model settings (if type: "local")
+  local_model_path: "models/llama-3-8b-instruct.Q4_K_M.gguf"
+  
+  # API keys loaded from environment variables
+  openai_api_key: "${OPENAI_API_KEY}"
+  gemini_api_key: "${GEMINI_API_KEY}"
+  anthropic_api_key: "${ANTHROPIC_API_KEY}"
+
+# RAG SYSTEM CONFIGURATION
+rag:
+  embedding_model: "all-MiniLM-L6-v2"
+  retrieval_k: 5                      # Number of documents to retrieve
+  chunk_size: 1000                    # Text chunk size for processing
+  chunk_overlap: 200                  # Overlap between chunks
+  use_data_tooling: true              # Enable real-time data lookup
+  enable_fallback: true               # Enable fallback responses when RAG fails
+
+# PERSONA WEIGHT CONFIGURATIONS
+# Each persona has different priorities for the 7 FVI dimensions
+persona_weights:
+  investor:
+    economic: 0.25                    # Financial returns and market conditions
+    artificial_support: 0.20          # Government subsidies and support
+    emissions: 0.20                   # Climate risk and carbon pricing
+    infrastructure: 0.15              # Existing assets and facilities
+    resource: 0.10                    # Coal reserves and availability
+    ecological: 0.05                  # Environmental compliance costs
+    necessity: 0.05                   # Energy security considerations
+
+  policy_maker:
+    necessity: 0.20                   # Energy security and public need
+    economic: 0.20                    # Economic impact and jobs
+    emissions: 0.20                   # Climate policy and targets
+    infrastructure: 0.15              # Public infrastructure investment
+    ecological: 0.15                  # Environmental protection
+    artificial_support: 0.05          # Budget allocation efficiency
+    resource: 0.05                    # Strategic resource management
+
+  ngo:
+    emissions: 0.25                   
+    ecological: 0.25                  
+    necessity: 0.20                   
+    infrastructure: 0.10              
+    resource: 0.10                   
+    artificial_support: 0.05          
+    economic: 0.05                   
+
+  analyst:
+    infrastructure: 0.143            
+    necessity: 0.143
+    resource: 0.143
+    artificial_support: 0.143
+    ecological: 0.143
+    economic: 0.143
+    emissions: 0.143
+
+  citizen:
+    necessity: 0.25                 
+    ecological: 0.20                  
+    infrastructure: 0.20            
+    economic: 0.15                   
+    emissions: 0.10                   
+    artificial_support: 0.05         
+    resource: 0.05                   
+
+# DATA PROCESSING SETTINGS
+data_processing:
+  tolerate_missing_data: true         
+  default_score_for_missing: 50.0     
+  min_data_coverage_threshold: 0.6    
+  auto_update_interval: 86400         
+  cache_results: true                
+  
+# SCORING SYSTEM SETTINGS
+scoring:
+  score_range: [0, 100]             
+  normalization_method: "min_max"     
+  outlier_handling: "clip"            
+  missing_value_strategy: "median"    
+
+# VISUALIZATION SETTINGS
+visualization:
+  default_chart_type: "bar"          
+  color_scheme: "viridis"            
+  show_confidence_intervals: true     
+  enable_interactive_charts: true     
+  
+# API SETTINGS
+api:
+  enable_cors: true                   
+  rate_limiting: true                 
+  max_requests_per_minute: 60        
+  enable_caching: true              
+  cache_ttl: 300                      
+  
+# LOGGING CONFIGURATION
+logging:
+  level: "INFO"                      
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file_logging: true                  
+  max_file_size: "10MB"               
+  backup_count: 5                     
+  
+# FEATURE FLAGS
+feature_flags:
+  enable_experimental_features: false
+  enable_advanced_analytics: true
+  enable_data_export: true
+  enable_multi_language: false
+  enable_user_authentication: false
+  
+# PERFORMANCE SETTINGS
+performance:
+  enable_parallel_processing: true    
+  max_workers: 4                     
+  memory_limit_mb: 2048              
+  
+# VERSION INFO
+version: "2.0.0"
+last_updated: "2025-08-04"
+maintainer: "FVI Development Team"

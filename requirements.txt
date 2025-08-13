@@ -1,0 +1,42 @@
+# Core Dependencies
+streamlit>=1.32.0
+fastapi>=0.110.0
+uvicorn>=0.29.0
+pandas>=2.2.1
+numpy>=2.0.0
+scipy>=1.12.0
+pyyaml>=6.0.1
+python-dotenv>=1.0.1
+
+# AI/ML Dependencies
+langchain>=0.1.17
+langchain-community>=0.0.33
+langchain-core>=0.1.47
+langchain-openai>=0.1.8
+langchain-google-genai>=1.0.0
+langchain-huggingface>=0.1.0
+openai>=1.30.3
+sentence-transformers>=2.5.1
+faiss-cpu>=1.8.0
+
+# Data Processing
+unstructured[all-docs]>=0.10.18
+PyPDF2>=3.0.1
+tqdm>=4.66.1
+
+# Visualization
+matplotlib>=3.8.3
+plotly>=5.18.0
+streamlit-extras>=0.4.0
+
+# Optional: Enhanced Features
+google-generativeai>=0.3.0  # For Gemini API
+# anthropic>=0.7.0             # For Claude API
+# chromadb>=0.4.0              # Alternative vector database
+# redis>=4.5.0                 # For caching
+
+# Development Dependencies (optional)
+# pytest>=7.0.0
+# black>=23.0.0
+# flake8>=6.0.0
+# mypy>=1.0.0
