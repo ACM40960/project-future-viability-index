@@ -30,12 +30,12 @@ from .utils import (
     standardize_country_name,
 )
 
-# --------------------- Weights (sum to 1.0) and caps -------------------------
+#  Weights (sum to 1.0) and caps 
 
 W_PRODUCTION    = 0.20
 W_DEFOREST      = 0.25
 W_LAND_MINED    = 0.20
-W_RESTORATION   = 0.15  # applied to the inverted restoration ratio
+W_RESTORATION   = 0.15  
 W_CO2           = 0.10
 W_SO2           = 0.05
 W_NOX           = 0.05
@@ -47,10 +47,10 @@ CAP_CO2         = 15000     # Mt
 CAP_SO2         = 100       # Mt
 CAP_NOX         = 50        # Mt
 
-COUNTRY_COLS = ["entity", "country", "country_name", "Country"]  # robust matching
+COUNTRY_COLS = ["entity", "country", "country_name", "Country"]  
 
 
-# ----------------------------- Public API ------------------------------------
+#  Public API 
 
 def calculate_ecological_score(
     data_dict: Dict[str, pd.DataFrame],
@@ -83,7 +83,7 @@ def calculate_ecological_score(
     return pd.Series(scores)
 
 
-# ----------------------------- Data loading ----------------------------------
+#  Data loading 
 
 def _load_ecological_data(data_dict: Dict[str, pd.DataFrame]) -> Dict[str, pd.DataFrame]:
     out: Dict[str, pd.DataFrame] = {}
@@ -113,7 +113,7 @@ def _extract_countries_from_data(datasets: Dict[str, pd.DataFrame]) -> List[str]
     return sorted(seen)
 
 
-# ----------------------------- Column index ----------------------------------
+#  Column index 
 
 def _build_column_index(datasets: Dict[str, pd.DataFrame]) -> Dict[str, List[str]]:
     """
@@ -127,7 +127,7 @@ def _build_column_index(datasets: Dict[str, pd.DataFrame]) -> Dict[str, List[str
     return idx
 
 
-# ----------------------------- Feature extraction ----------------------------
+#  Feature extraction 
 
 def _candidate_names(country: str) -> List[str]:
     c = country or ""
@@ -207,7 +207,7 @@ def _extract_features_for_country(
     return {k: v for k, v in feats.items() if v is not None}
 
 
-# ----------------------------- Scoring ---------------------------------------
+#  Scoring 
 
 def _score_from_features(features: Dict[str, float]) -> float:
     comps: List[float] = []
@@ -243,7 +243,7 @@ def _score_from_features(features: Dict[str, float]) -> float:
     return float(min(100.0, max(0.0, total)))
 
 
-# ----------------------------- Fallback --------------------------------------
+#  Fallback 
 
 def _fallback_ecological_scores(country_list: Optional[List[str]]) -> pd.Series:
     if not country_list:
@@ -258,7 +258,7 @@ def _fallback_ecological_scores(country_list: Optional[List[str]]) -> pd.Series:
     return pd.Series(scores)
 
 
-# ----------------------------- Demo ------------------------------------------
+#  Demo 
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)

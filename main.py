@@ -98,7 +98,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Header (unchanged)
-st.markdown('<h1 class="main-header">🌍 Future Viability Index (FVI)</h1>', unsafe_allow_html=True)
+st.markdown('<h1 class="main-header">Future Viability Index (FVI)</h1>', unsafe_allow_html=True)
 st.markdown("*Comprehensive Coal Industry Viability Assessment Platform*")
 
 # Load configuration
@@ -224,7 +224,7 @@ with st.sidebar:
     
     # Display persona weights
     if selected_persona and config.get("persona_weights"):
-        st.markdown("### 📊 Current Weights")
+        st.markdown("### Current Weights")
         weights = config["persona_weights"][selected_persona]
         for dimension, weight in weights.items():
             st.write(f"**{dimension.replace('_', ' ').title()}**: {weight:.1%}")
@@ -232,7 +232,7 @@ with st.sidebar:
     st.divider()
     
     # System information (updated to use /healthz if present)
-    st.markdown("### ℹ️ System Info")
+    st.markdown("###System Info")
     health = get_system_info()
     if health and health.get("status") == "ok":
         st.success("✅ Backend Online")
@@ -385,7 +385,7 @@ def main():
     col1, col2 = st.columns([2, 1])
     
     with col1:
-        st.subheader("📊 FVI Dashboard")
+        st.subheader("FVI Dashboard")
         
         # Tabs for different views
         tab1, tab2, tab3 = st.tabs(["FVI Rankings", "Detailed Scores", "Country Comparison"])
@@ -439,7 +439,7 @@ def main():
             )
             
             # Dimension analysis
-            st.markdown("### 📊 Dimension Analysis")
+            st.markdown("### Dimension Analysis")
             # Filter only numeric columns for mean calculation (NumPy 2.0 compatibility)
             numeric_columns = scores_df.select_dtypes(include=[np.number]).columns
             if len(numeric_columns) > 0:
@@ -481,7 +481,7 @@ def main():
                 st.dataframe(summary_stats, use_container_width=True)
     
     with col2:
-        st.subheader("💬 FVI Intelligence Chat")
+        st.subheader("FVI Intelligence Chat")
         
         # Initialize chat agent (not used directly; keeps layout parity)
         rag_agent = get_rag_agent()
@@ -495,12 +495,12 @@ def main():
         
         # Optional country selection for context (kept)
         selected_country = st.selectbox(
-            "🌍 Focus on specific country (optional):",
+            "Focus on specific country (optional):",
             ["Any", "China", "India", "United States", "Germany", "Poland", "Australia", "South Africa", "Indonesia"],
             index=0
         )
         
-        if st.button("🔍 Analyze", use_container_width=True):
+        if st.button("Analyze", use_container_width=True):
             if user_question.strip():
                 with st.spinner("Analyzing your question..."):
                     try:
@@ -528,11 +528,11 @@ def main():
                         
                         # Show enhanced context if available (unchanged)
                         if enhanced_context and enhanced_context.get("enhanced"):
-                            with st.expander("📊 Enhanced Context Analysis", expanded=False):
+                            with st.expander("Enhanced Context Analysis", expanded=False):
                                 
                                 # Key Insights Section
                                 if enhanced_context.get("key_insights"):
-                                    st.markdown("### 🔍 Key Insights")
+                                    st.markdown("### Key Insights")
                                     for i, insight in enumerate(enhanced_context["key_insights"], 1):
                                         st.info(f"**{i}.** {insight}")
                                 
@@ -541,18 +541,18 @@ def main():
                                 categories = structured_context.get("categories", {})
                                 
                                 if categories:
-                                    st.markdown("### 📋 Context by Category")
+                                    st.markdown("### Context by Category")
                                     
                                     # Create tabs for different categories
                                     category_names = list(categories.keys())
                                     category_labels = {
-                                        "industry_overview": "🏭 Industry Overview",
-                                        "technical_data": "⚙️ Technical Data", 
-                                        "economic_factors": "💰 Economic Factors",
-                                        "environmental_impact": "🌍 Environmental Impact",
-                                        "policy_regulatory": "📜 Policy & Regulatory",
-                                        "market_trends": "📈 Market Trends",
-                                        "country_specific": "🏳️ Country-Specific"
+                                        "industry_overview": "Industry Overview",
+                                        "technical_data": "Technical Data", 
+                                        "economic_factors": "Economic Factors",
+                                        "environmental_impact": "Environmental Impact",
+                                        "policy_regulatory": "Policy & Regulatory",
+                                        "market_trends": "Market Trends",
+                                        "country_specific": "Country-Specific"
                                     }
                                     
                                     if len(category_names) > 0:
@@ -585,7 +585,7 @@ def main():
                                 
                                 # Country-Specific Context
                                 if enhanced_context.get("country_context"):
-                                    st.markdown("### 🗺️ Country-Specific Analysis")
+                                    st.markdown("### Country-Specific Analysis")
                                     with st.container():
                                         st.markdown("**Detailed Country Context:**")
                                         country_text = enhanced_context["country_context"]
@@ -599,7 +599,7 @@ def main():
                                             st.write(country_text)
                                 
                                 # Summary Statistics
-                                st.markdown("### 📊 Analysis Summary")
+                                st.markdown("### Analysis Summary")
                                 col1, col2, col3 = st.columns(3)
                                 
                                 with col1:
@@ -623,7 +623,7 @@ def main():
                                 # Data Sources
                                 data_sources = structured_context.get("data_sources", [])
                                 if data_sources:
-                                    st.markdown("**📚 Data Sources:**")
+                                    st.markdown("**Data Sources:**")
                                     for source in data_sources:
                                         st.markdown(f"• {source}")
                         

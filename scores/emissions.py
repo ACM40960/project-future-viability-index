@@ -25,11 +25,11 @@ from typing import Dict, List, Optional, Tuple
 from .utils import (
     normalize_score,
     validate_data,
-    get_latest_data_by_country,   # assumed to use 'year' when present
+    get_latest_data_by_country,   
     standardize_country_name
 )
 
-# ----------------------------- Configuration ---------------------------------
+# Configuration 
 
 # Component weights (sum to 1.0)
 W_CO2 = 0.30
@@ -38,7 +38,7 @@ W_TAX = 0.20
 W_READINESS = 0.15
 W_INTENSITY = 0.05
 
-# Normalization caps (tune as needed)
+# Normalization caps 
 CO2_MAX = 15000         # coal CO2 emissions (Mt)
 INTENSITY_MAX = 2000    # tCO2 / TWh
 
@@ -47,7 +47,7 @@ COL_ENTITY = "entity"
 COL_COUNTRY = "country"
 COL_COUNTRY_NAME = "country_name"
 
-# ----------------------------- Public API ------------------------------------
+#  Public API 
 
 
 def calculate_emissions_score(
@@ -86,7 +86,7 @@ def calculate_emissions_score(
     return pd.Series(scores)
 
 
-# ----------------------------- Data Loading ----------------------------------
+#  Data Loading 
 
 
 def _load_emissions_data(data_dict: Dict[str, pd.DataFrame]) -> Dict[str, pd.DataFrame]:
@@ -128,7 +128,7 @@ def _extract_countries_from_data(datasets: Dict[str, pd.DataFrame]) -> List[str]
     return sorted(countries)
 
 
-# ----------------------------- Classification --------------------------------
+#  Classification 
 
 
 def _classify_dataset(df_name: str, df: pd.DataFrame) -> str:
@@ -164,7 +164,7 @@ def _build_kind_index(datasets: Dict[str, pd.DataFrame]) -> Dict[str, List[str]]
     return index
 
 
-# ----------------------------- Feature Extraction ----------------------------
+#  Feature Extraction 
 
 
 def _candidate_names(country: str) -> List[str]:
@@ -307,7 +307,7 @@ def _extract_features_for_country(
     return {k: v for k, v in feats.items() if v is not None}
 
 
-# ----------------------------- Scoring ---------------------------------------
+#  Scoring 
 
 
 def _score_from_features(features: Dict[str, float]) -> float:
@@ -351,7 +351,7 @@ def _score_from_features(features: Dict[str, float]) -> float:
     return float(min(100.0, max(0.0, total)))
 
 
-# ----------------------------- Fallback --------------------------------------
+#  Fallback 
 
 
 def _fallback_emissions_scores(country_list: Optional[List[str]]) -> pd.Series:

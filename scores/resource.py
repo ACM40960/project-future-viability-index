@@ -26,7 +26,7 @@ from .utils import (
     standardize_country_name,
 )
 
-# --------------------- Weights (sum to 1.0) and caps -------------------------
+#  Weights (sum to 1.0) and caps 
 
 W_PRODUCTION   = 0.30
 W_RESERVES     = 0.30
@@ -45,7 +45,7 @@ CAP_RP         = 200       # years (cap)
 COUNTRY_COLS = ["entity", "country", "country_name"]
 
 
-# ----------------------------- Public API ------------------------------------
+#  Public API 
 
 def calculate_resource_score(
     data_dict: Dict[str, pd.DataFrame],
@@ -74,7 +74,7 @@ def calculate_resource_score(
     return pd.Series(scores)
 
 
-# ----------------------------- Data loading ----------------------------------
+#  Data loading 
 
 def _load_resource_data(data_dict: Dict[str, pd.DataFrame]) -> Dict[str, pd.DataFrame]:
     out: Dict[str, pd.DataFrame] = {}
@@ -104,7 +104,7 @@ def _extract_countries_from_data(datasets: Dict[str, pd.DataFrame]) -> List[str]
     return sorted(seen)
 
 
-# ----------------------- Dataset classification (by columns) -----------------
+#  Dataset classification (by columns) 
 
 def _classify_dataset(df: pd.DataFrame) -> str:
     cols = set(df.columns)
@@ -126,7 +126,7 @@ def _build_kind_index(datasets: Dict[str, pd.DataFrame]) -> Dict[str, List[str]]
     return idx
 
 
-# ----------------------------- Feature extraction ----------------------------
+#  Feature extraction 
 
 def _candidate_names(country: str) -> List[str]:
     c = country or ""
@@ -238,7 +238,7 @@ def _extract_features_for_country(
     return {k: v for k, v in feats.items() if v is not None}
 
 
-# ----------------------------- Scoring ---------------------------------------
+#  Scoring 
 
 def _score_from_features(features: Dict[str, float]) -> float:
     comps: List[float] = []
@@ -286,7 +286,7 @@ def _score_from_features(features: Dict[str, float]) -> float:
     return float(min(100.0, max(0.0, total)))
 
 
-# ----------------------------- Fallback --------------------------------------
+#  Fallback 
 
 def _fallback_resource_scores(country_list: Optional[List[str]]) -> pd.Series:
     if not country_list:
@@ -301,7 +301,7 @@ def _fallback_resource_scores(country_list: Optional[List[str]]) -> pd.Series:
     return pd.Series(scores)
 
 
-# ----------------------------- Demo ------------------------------------------
+#  Demo 
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)

@@ -1,13 +1,14 @@
-# rag_agent.py — Clean, minimal RAG agent for FVI
+# This is fixed version of rag_agent.py 
+
 import os
 import logging
 from typing import Optional, Dict, Any, List
 
-# ---- logging ----
+# logging 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s | %(levelname)s | %(name)s | %(message)s")
 logger = logging.getLogger("rag-agent")
 
-# ---- optional deps ----
+#  optional deps 
 try:
     from openai import OpenAI  # official OpenAI >= 1.x client
 except Exception:
@@ -24,7 +25,7 @@ try:
 except Exception:
     FVI_Aggregator = None
 
-# Optional: FAISS retriever to enrich context if present
+# FAISS retriever to enrich context if present
 try:
     from langchain_community.vectorstores import FAISS
     from langchain_community.embeddings import HuggingFaceEmbeddings
@@ -33,6 +34,8 @@ except Exception:
     FAISS_AVAILABLE = False
 
 DEFAULT_MODEL = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
+
+# Prompt generation
 
 SYSTEM_PROMPT = """You are the FVI assistant for coal-industry assessment.
 Be concise, structured, and data-grounded. Use the provided CONTEXT faithfully.
@@ -110,7 +113,7 @@ class FVIRAG:
         self.aggregator = FVI_Aggregator(self.config) if (FVI_Aggregator and self.config) else None
         self.current_persona = "analyst"
 
-        # Retriever (optional)
+        # Retriever
         self.retriever = None
         vs_dir = vectorstore_dir or self.config.get("rag", {}).get("vectorstore_dir", "vectorstore")
         if FAISS_AVAILABLE and os.path.isdir(vs_dir) and os.listdir(vs_dir):
@@ -124,7 +127,7 @@ class FVIRAG:
         else:
             logger.info("No vectorstore found; proceeding without retrieval.")
 
-    # ---------- public API ----------
+    #  public API 
     def answer(self, query: str, persona: Optional[str] = None, context: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
         if not query or not query.strip():
             raise ValueError("Empty query provided.")
@@ -157,7 +160,7 @@ class FVIRAG:
     def get_chain(self, persona: Optional[str] = None, context: Optional[Dict[str, Any]] = None):
         return _CompatChain(self, persona=persona, extra_context=context)
 
-    # ---------- helpers ----------
+    #  helpers
     def _detect_persona(self, query: str) -> str:
         q = query.lower()
         buckets = {
@@ -220,7 +223,7 @@ class FVIRAG:
         else:
             parts.append("\nNo vectorstore retrieval.")
 
-        # Extra context (from caller)
+        # Extra context 
         if extra_context:
             parts.append("\nExtra context:")
             for k, v in extra_context.items():

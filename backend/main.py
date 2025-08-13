@@ -19,9 +19,9 @@ try:
 except Exception:
     yaml = None
 
-from rag_agent import FVIRAG  # your cleaned agent
+from rag_agent import FVIRAG # Version 2  Rag Agent (fixed)
 
-# ---------------- config helpers ----------------
+# config helpers
 def _safe_load_yaml(path: str) -> Dict[str, Any]:
     if not yaml:
         return {}
@@ -58,7 +58,7 @@ def _load_scores_df_from_config(cfg: Dict[str, Any]) -> Optional[pd.DataFrame]:
         logging.getLogger("fvi-backend").warning(f"Failed to load scores_df: {e}")
         return None
 
-# ---------------- load config & logging ----------------
+# load config & logging 
 CONFIG_PATH = os.getenv("CONFIG_PATH", "config.yaml")
 CFG = _safe_load_yaml(CONFIG_PATH)
 
@@ -67,7 +67,7 @@ log_fmt   = _cfg_get(CFG, "logging", "format", default="%(asctime)s - %(name)s -
 logging.basicConfig(level=getattr(logging, log_level, logging.INFO), format=log_fmt)
 logger = logging.getLogger("fvi-backend")
 
-# ---------------- FastAPI init ----------------
+# FastAPI init
 app = FastAPI(title="FVI Backend", version=_cfg_get(CFG, "version", default="1.0.0"))
 
 # CORS
@@ -80,7 +80,7 @@ if _cfg_get(CFG, "api", "enable_cors", default=True):
         allow_headers=["*"],
     )
 
-# ---------------- models ----------------
+# models
 class ChatRequest(BaseModel):
     message: str
     persona: Optional[str] = None
@@ -91,7 +91,7 @@ class ChatResponse(BaseModel):
     persona: str
     meta: Dict[str, Any] = {}
 
-# ---------------- initialize agent ----------------
+# initialize agent 
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 if not OPENAI_API_KEY:
     logger.error("OPENAI_API_KEY is NOT set — RAG will fail.")
@@ -103,7 +103,7 @@ vectorstore_dir = (
     or "vectorstore"
 )
 
-model_name = _cfg_get(CFG, "llm", "model_name")  # gpt-4o-mini from your config
+model_name = _cfg_get(CFG, "llm", "model_name")  
 retrieval_k = _cfg_get(CFG, "rag", "retrieval_k", default=5)
 
 _scores_df = _load_scores_df_from_config(CFG)
@@ -121,7 +121,7 @@ try:
 except Exception as e:
     logger.exception(f"Failed to initialize FVIRAG: {e}")
 
-# ---------------- routes ----------------
+# routes
 @app.get("/healthz")
 def healthz():
     return {
