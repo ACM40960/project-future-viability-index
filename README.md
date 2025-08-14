@@ -204,5 +204,22 @@ Any reproduction, distribution, or use of the material without prior written per
 | Sharvari Khatavkar | 24203968 | sharvari.khatavkar@ucdconnect.ie |
 
 ---
+## 🤝 Collaboration & Networking
+
+We are open to collaboration, feedback, and knowledge exchange.  
+If you find our project interesting or have ideas to improve it, feel free to connect with us or contribute to the repository.
+
+**GitHub Profiles:**
+- [Ujwal Mojidra](https://github.com/ujwal373)  
+- [Rahul Babu](https://github.com/RahulB117)
+- [Anshu Kumar](https://github.com/RahulB117)
+- [Rudra Rawat](https://github.com/RahulB117)
+
+**LinkedIn Profiles:**
+- [Ujwal Mojidra](https://www.linkedin.com/in/ujwalmojidra/)  
+- [Rahul Babu](https://www.linkedin.com/in/rahul-babu117/)
+- [Anshu Kumar](https://www.linkedin.com/in/anshu-kumar-3592b31a9/)
+- [Rudra Rawat](https://www.linkedin.com/in/rudra-rawat/)
+- [Sharvari Khatavkar](https://www.linkedin.com/in/sharvari-khatavkar-520b131b6/)
 
 ![Powered by Darwin & Goliath](d&g_logo.png)
