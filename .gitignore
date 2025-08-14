@@ -70,8 +70,8 @@ Thumbs.db
 # ----------------------
 # VECTORSTORE / MODELS
 # ----------------------
-vectorstore/
-models/
+# vectorstore/
+# models/
 
 # ----------------------
 # CHROMADB / DB FILES
