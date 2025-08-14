@@ -3,31 +3,51 @@
 
 > **Version:** FVI_V2 – with Retrieval-Augmented Generation (RAG) Agent, OpenAI GPT-4o-mini integration, and updated project structure.
 
+## 🚀 Tech Stack
+- 🐍 [Python](https://www.python.org/)
+- 📊 [Pandas](https://pandas.pydata.org/)
+- 📈 [Matplotlib](https://matplotlib.org/) & [Plotly](https://plotly.com/python/)
+- 🤖 [OpenAI GPT-4o-mini](https://platform.openai.com/docs/)
+- 🔍 [FAISS](https://faiss.ai/)
+- 🌐 [Streamlit](https://streamlit.io/)
+- ⚡ [FastAPI](https://fastapi.tiangolo.com/)
+- 📦 [PyYAML](https://pyyaml.org/)
+
 ---
 
 ## 📑 Table of Contents
 1. [Project Overview](#project-overview)
-2. [Features](#features)
-3. [Architecture](#architecture)
-4. [Directory Structure](#directory-structure)
-5. [Installation & Setup](#installation--setup)
-6. [Usage](#usage)
-7. [Development Notes](#development-notes)
-8. [Acknowledgement](#acknowledgement)
-9. [License](#license)
-10. [Authors](#authors)
+2. [Motivation](#motivation)
+3. [Features](#features)
+4. [Methodology](#methodology)
+5. [Project Flow](#-project-flow)
+6. [Architecture of FVI Intelligence Agent](#-architecture-of-fvi-intelligence-agent)
+7. [Directory Structure](#directory-structure)
+8. [Installation & Setup](#installation--setup)
+9. [Usage](#usage)
+10. [Development Notes](#development-notes)
+11. [Demonstration](#-demonstration)
+12. [Acknowledgement](#acknowledgement)
+13. [License](#license)
+14. [Authors](#authors)
 
 ---
 
 ## 📌 Project Overview
-The **Future Viability Index (FVI)** is a decision-support framework designed to assess the sustainability, resilience, and long-term viability of coal-dependent economies.
+The **Future Viability Index (FVI)** is an AI-powered decision-support system designed to assess the long-term viability of the coal industry across seven critical dimensions: **infrastructure, necessity, resources, artificial support, ecological impact, economic factors, and emissions**.  
+Developed during an internship with **Darwin & Goliath Ltd.**, the system integrates diverse global and national datasets with a **Retrieval-Augmented Generation (RAG)** framework to deliver contextual, persona-specific insights for **investors, policymakers, NGOs, analysts, and citizens**.
 
-This tool combines:
-- **Data ingestion & scoring models** across economic, ecological, infrastructure, and social dimensions.
-- **Retrieval-Augmented Generation (RAG)** with **OpenAI GPT-4o-mini** to provide contextual, knowledge-backed insights.
-- **Interactive UI** for investors, policymakers, and researchers.
+The platform provides **real-time viability scoring, cross-country comparisons, and investment recommendations** via an interactive dashboard and an AI-driven Q&A interface. By combining **quantitative scoring models** with **contextual industry intelligence**, the FVI offers a **transparent, scalable, and adaptable framework** to evaluate coal industry stability and support sustainable transition strategies within the global energy sector.
 
-The primary goal is to **evaluate coal industry viability** while supporting strategic decision-making towards a sustainable energy transition.
+---
+
+## 🎯 Motivation
+- The coal industry is under increasing **economic, environmental, and policy pressures** as nations transition toward cleaner energy sources.  
+- Fragmented, outdated, or biased datasets make it challenging to accurately assess the long-term viability of coal operations.  
+- Stakeholders — including **investors, policymakers, and NGOs** — require clear, multi-dimensional insights that balance **financial returns with social and environmental priorities**.  
+- Existing tools often focus on **single factors** (e.g., emissions, reserves) and lack an **integrated, holistic scoring framework**.  
+
+✅ The **Future Viability Index (FVI)** addresses this gap by combining **AI-powered contextual analysis** with **quantitative scoring models**, delivering **transparent, data-driven, and actionable evaluations**.
 
 ---
 
@@ -42,7 +62,21 @@ The primary goal is to **evaluate coal industry viability** while supporting str
 
 ---
 
-## 🏗 Architecture
+## 🛠 Methodology
+The **Future Viability Index (FVI)** assesses coal industry stability across seven dimensions: **infrastructure, necessity, resources, artificial support, ecological, economic, and emissions**.  
+It integrates multi-source datasets into a **weighted scoring engine** with persona-based adjustments for **investors, policymakers, NGOs, and citizens**.  
+
+A **Retrieval-Augmented Generation (RAG)** pipeline with **FAISS** enables context-aware insights from curated industry knowledge.  
+The system is deployed via a **Streamlit frontend** and **FastAPI backend**, providing **real-time scoring, cross-country comparisons, and stakeholder-specific recommendations** through an interactive dashboard.
+
+---
+
+## 📊 Project Flow
+![Project Flowchart](flowchart.png)
+
+---
+
+## 🏗 Architecture of FVI Intelligence Agent
 
 ### Mermaid Diagram
 ```mermaid
@@ -142,6 +176,11 @@ streamlit run main.py --server.port 8502
 
 ---
 
+## 🎥 Demonstration
+📺 **Watch the demo here:** [YouTube Video](https://youtu.be/7mNofwNqJvU)
+
+---
+
 ## 🙏 Acknowledgement
 We acknowledge the equal contributions of all team members in the design, development, and delivery of the Future Viability Index system.  
 We extend our gratitude to **Darwin & Goliath Ltd.** for their guidance, domain expertise, and provision of data resources, which were instrumental in the successful completion of this project.
@@ -163,3 +202,7 @@ Any reproduction, distribution, or use of the material without prior written per
 | Anshu Kumar | 24203717 | anshu.kumar@ucdconnect.ie |
 | Rudra Nirmal Rawat | 24205441 | rudra.rawat@ucdconnect.ie |
 | Sharvari Khatavkar | 24203968 | sharvari.khatavkar@ucdconnect.ie |
+
+---
+
+![Powered by Darwin & Goliath](d&g_logo.png)
