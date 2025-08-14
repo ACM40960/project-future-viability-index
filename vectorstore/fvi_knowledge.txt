@@ -101,6 +101,7 @@ Chemical industry:
 - Coal as feedstock for chemicals and pharmaceuticals
 - Syngas production for ammonia and methanol
 - Carbon black production for rubber and plastics
+
 DIMENSION 3: RESOURCE
 =====================
 Coal Reserves and Quality
