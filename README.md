@@ -1,7 +1,7 @@
 
 # Future Viability Index (FVI) – RAG-Enhanced Coal Industry Assessment
 
-> **Version:** FVI_V2 – with Retrieval-Augmented Generation (RAG) Agent, OpenAI GPT-4o-mini integration, and updated project structure.
+> **Version:** FVI_V1 – with Retrieval-Augmented Generation (RAG) Agent, OpenAI GPT-4o-mini integration, and updated project structure.
 
 ## 🚀 Tech Stack
 - 🐍 [Python](https://www.python.org/)
@@ -27,9 +27,11 @@
 9. [Usage](#usage)
 10. [Development Notes](#development-notes)
 11. [Demonstration](#-demonstration)
-12. [Acknowledgement](#acknowledgement)
-13. [License](#license)
-14. [Authors](#authors)
+12. [Acknowledgement](#acknowledgement)  
+13. [Authors](#authors)  
+14. [Disclaimer](#-disclaimer)  
+15. [Data Transparency & EU AI Act Alignment](#-data-transparency--eu-ai-act-alignment)  
+16. [License](#license)  
 
 ---
 
@@ -187,13 +189,6 @@ We extend our gratitude to **Darwin & Goliath Ltd.** for their guidance, domain 
 
 ---
 
-## 📜 License
-© 2025 Darwin & Goliath Ltd. All rights reserved.  
-This work was developed as part of an academic–industry collaboration with the MSc Data and Computational Science programme, University College Dublin.  
-Any reproduction, distribution, or use of the material without prior written permission is prohibited.
-
----
-
 ## 👥 Authors
 | Name | Student ID | Email |
 |------|------------|-------|
@@ -204,5 +199,68 @@ Any reproduction, distribution, or use of the material without prior written per
 | Sharvari Khatavkar | 24203968 | sharvari.khatavkar@ucdconnect.ie |
 
 ---
+## 🤝 Collaboration & Networking
 
-![Powered by Darwin & Goliath](d&g_logo.png)
+We are open to collaboration, feedback, and knowledge exchange.  
+If you find our project interesting or have ideas to improve it, feel free to connect with us or contribute to the repository.
+
+**GitHub Profiles:**
+- [Ujwal Mojidra](https://github.com/ujwal373)  
+- [Rahul Babu](https://github.com/RahulB117)
+- [Anshu Kumar](https://github.com/RahulB117)
+- [Rudra Rawat](https://github.com/RahulB117)
+
+**LinkedIn Profiles:**
+- [Ujwal Mojidra](https://www.linkedin.com/in/ujwalmojidra/)  
+- [Rahul Babu](https://www.linkedin.com/in/rahul-babu117/)
+- [Anshu Kumar](https://www.linkedin.com/in/anshu-kumar-3592b31a9/)
+- [Rudra Rawat](https://www.linkedin.com/in/rudra-rawat/)
+- [Sharvari Khatavkar](https://www.linkedin.com/in/sharvari-khatavkar-520b131b6/)
+
+---
+
+## ⚠️ Disclaimer  
+
+>  **Purpose Statement**  
+> *The Future Viability Index (FVI) is an educational and research tool intended to provide systemic analysis of industries. It is not designed to predict short-term market movements or investment returns.*  
+>
+>  **No Investment Advice**  
+> *FVI does not provide investment advice, recommendations, or endorsements of any financial instruments, securities, or investment strategies.*  
+>
+>  **Data Source & Limitations**  
+> *FVI scores are based on publicly available and third-party data believed to be reliable, but FVI does not guarantee completeness or accuracy. Past performance, market conditions, and viability scores are not indicative of future outcomes.*  
+>
+>  **User Responsibility**  
+> *Users are solely responsible for their own investment decisions. FVI and its affiliates accept no liability for any loss arising from reliance on its outputs.*  
+>
+>  **Jurisdictional Notes**  
+> *Certain jurisdictions regulate the provision of financial advice. FVI is not licensed as a financial adviser in any jurisdiction.*  
+
+---
+
+## Data Transparency & EU AI Act Alignment  
+
+>  In line with the **EU AI Act** principles of *transparency, reliability, and accountability*, we provide an overview of the datasets powering **FVI scores**.  
+
+|  **Dimension**         |  **Primary Data Sources**                          |  **Limitations / Notes** |
+|--------------------------|------------------------------------------------------|-----------------------------|
+| 🏗️ **Infrastructure**     | World Bank, IEA, national statistics                 | May lack local project-level updates |
+| 🛠️ **Necessity**          | UN SDG indicators, national consumption datasets     | Proxy measures; may vary regionally |
+| ⛏️ **Resources**          | BP Statistical Review, USGS, IEA                     | Reserve estimates subject to revision |
+| 💰 **Artificial Support** | IEA policy tracker, subsidy databases                | Some policies not updated in real-time |
+| 🌱 **Ecological Impact**  | UNEP, IPCC, national emissions registries            | Country self-reported data may vary |
+| 📉 **Economic Factors**   | IMF, World Bank, OECD, national accounts             | Time lags in reporting |
+| 🌫️ **Emissions**         | IEA, UNFCCC, EPA, national GHG inventories           | Methodological differences across countries |
+
+>  *All datasets are used for **educational, analytical, and non-commercial purposes only.***  
+
+---
+
+## 📜 License
+© 2025 Darwin & Goliath Ltd. All rights reserved.  
+This work was developed as part of an academic–industry collaboration with the MSc Data and Computational Science programme, University College Dublin.  
+Any reproduction, distribution, or use of the material without prior written permission is prohibited.
+
+---
+
+![Powered by Darwin & Goliath](d&g_logo.jpg)
