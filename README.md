@@ -35,7 +35,7 @@
 
 ---
 
-## 📌 Project Overview
+## Project Overview
 The **Future Viability Index (FVI)** is an AI-powered decision-support system designed to assess the long-term viability of the coal industry across seven critical dimensions: **infrastructure, necessity, resources, artificial support, ecological impact, economic factors, and emissions**.  
 Developed during an internship with **Darwin & Goliath Ltd.**, the system integrates diverse global and national datasets with a **Retrieval-Augmented Generation (RAG)** framework to deliver contextual, persona-specific insights for **investors, policymakers, NGOs, analysts, and citizens**.
 
@@ -43,7 +43,7 @@ The platform provides **real-time viability scoring, cross-country comparisons, 
 
 ---
 
-## 🎯 Motivation
+## Motivation
 - The coal industry is under increasing **economic, environmental, and policy pressures** as nations transition toward cleaner energy sources.  
 - Fragmented, outdated, or biased datasets make it challenging to accurately assess the long-term viability of coal operations.  
 - Stakeholders — including **investors, policymakers, and NGOs** — require clear, multi-dimensional insights that balance **financial returns with social and environmental priorities**.  
@@ -53,7 +53,7 @@ The platform provides **real-time viability scoring, cross-country comparisons, 
 
 ---
 
-## ✨ Features
+## Features
 - **Modular Scoring** – Dedicated Python modules for each sustainability dimension.
 - **RAG Agent** – Retrieves relevant knowledge from `fvi_knowledge.txt` in `vectorstore/` before responding.
 - **Semantic Search** – Powered by ChromaDB or FAISS for efficient contextual retrieval.
@@ -64,7 +64,7 @@ The platform provides **real-time viability scoring, cross-country comparisons, 
 
 ---
 
-## 🛠 Methodology
+## Methodology
 The **Future Viability Index (FVI)** assesses coal industry stability across seven dimensions: **infrastructure, necessity, resources, artificial support, ecological, economic, and emissions**.  
 It integrates multi-source datasets into a **weighted scoring engine** with persona-based adjustments for **investors, policymakers, NGOs, and citizens**.  
 
@@ -73,12 +73,12 @@ The system is deployed via a **Streamlit frontend** and **FastAPI backend**, pro
 
 ---
 
-## 📊 Project Flow
+## Project Flow
 ![Project Flowchart](flowchart.png)
 
 ---
 
-## 🏗 Architecture of FVI Intelligence Agent
+## Architecture of FVI Intelligence Agent
 
 ### Mermaid Diagram
 ```mermaid
@@ -94,7 +94,7 @@ flowchart TD
 
 ---
 
-## 📂 Directory Structure
+## Directory Structure
 ```
 FVI/
 │── backend/                 # FastAPI backend & RAG agent
@@ -113,7 +113,7 @@ FVI/
 
 ---
 
-## ⚙ Installation & Setup
+## Installation & Setup
 
 ### 1️⃣ Clone Repository
 ```bash
@@ -146,7 +146,7 @@ python scripts/build_vectorstore.py
 
 ---
 
-## 🚀 Usage
+## Usage
 
 ### Run Backend (Terminal:1)
 ```bash
@@ -171,25 +171,25 @@ streamlit run main.py --server.port 8502
 
 ---
 
-## 🛠 Development Notes
+## Development Notes
 - Rebuild vectorstore after updating `fvi_knowledge.txt`.
 - Keep `.venv` and `.env` out of Git (`.gitignore` is pre-configured).
 - Use the `FVI_V2` branch for RAG-integrated development.
 
 ---
 
-## 🎥 Demonstration
+## Demonstration
 📺 **Watch the demo here:** [YouTube Video](https://youtu.be/7mNofwNqJvU)
 
 ---
 
-## 🙏 Acknowledgement
+## Acknowledgement
 We acknowledge the equal contributions of all team members in the design, development, and delivery of the Future Viability Index system.  
 We extend our gratitude to **Darwin & Goliath Ltd.** for their guidance, domain expertise, and provision of data resources, which were instrumental in the successful completion of this project.
 
 ---
 
-## 👥 Authors
+## Authors
 | Name | Student ID | Email |
 |------|------------|-------|
 | Rahul Babu | 24203075 | rahul.babu@ucdconnect.ie |
@@ -199,7 +199,7 @@ We extend our gratitude to **Darwin & Goliath Ltd.** for their guidance, domain 
 | Sharvari Khatavkar | 24203968 | sharvari.khatavkar@ucdconnect.ie |
 
 ---
-## 🤝 Collaboration & Networking
+## Collaboration & Networking
 
 We are open to collaboration, feedback, and knowledge exchange.  
 If you find our project interesting or have ideas to improve it, feel free to connect with us or contribute to the repository.
@@ -219,7 +219,7 @@ If you find our project interesting or have ideas to improve it, feel free to co
 
 ---
 
-## ⚠️ Disclaimer  
+## Disclaimer  
 
 >  **Purpose Statement**  
 > *The Future Viability Index (FVI) is an educational and research tool intended to provide systemic analysis of industries. It is not designed to predict short-term market movements or investment returns.*  
@@ -256,7 +256,7 @@ If you find our project interesting or have ideas to improve it, feel free to co
 
 ---
 
-## 📜 License
+## License
 © 2025 Darwin & Goliath Ltd. All rights reserved.  
 This work was developed as part of an academic–industry collaboration with the MSc Data and Computational Science programme, University College Dublin.  
 Any reproduction, distribution, or use of the material without prior written permission is prohibited.
