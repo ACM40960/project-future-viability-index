@@ -1,7 +1,7 @@
 
 # Future Viability Index (FVI) – RAG-Enhanced Coal Industry Assessment
 
-> **Version:** FVI_V2 – with Retrieval-Augmented Generation (RAG) Agent, OpenAI GPT-4o-mini integration, and updated project structure.
+> **Version:** FVI_V1 – with Retrieval-Augmented Generation (RAG) Agent, OpenAI GPT-4o-mini integration, and updated project structure.
 
 ## 🚀 Tech Stack
 - 🐍 [Python](https://www.python.org/)
