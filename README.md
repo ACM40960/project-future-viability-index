@@ -207,8 +207,8 @@ If you find our project interesting or have ideas to improve it, feel free to co
 **GitHub Profiles:**
 - [Ujwal Mojidra](https://github.com/ujwal373)  
 - [Rahul Babu](https://github.com/RahulB117)
-- [Anshu Kumar](https://github.com/RahulB117)
-- [Rudra Rawat](https://github.com/RahulB117)
+- [Anshu Kumar](https://github.com/ANSHU-Ireland)
+- [Rudra Rawat](https://github.com/DEADBEAT420)
 
 **LinkedIn Profiles:**
 - [Ujwal Mojidra](https://www.linkedin.com/in/ujwalmojidra/)  
